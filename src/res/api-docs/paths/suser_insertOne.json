@@ -1,0 +1,98 @@
+{
+  "/suser/insertOne": {
+    "post": {
+      "description": "create user model",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "suser"
+      ],
+      "parameters": [
+        {
+          "name": "firstname",
+          "in": "formData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "lastname",
+          "in": "formData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "mail",
+          "in": "formData",
+          "description": "mail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "apps",
+          "in": "formData",
+          "description": "array of app names allowed by user",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "app-alarm",
+            "app-assistant",
+            "app-chosen",
+            "app-colors",
+            "app-livingWall",
+            "app-maps",
+            "app-menu",
+            "app-museum",
+            "app-photos",
+            "app-play",
+            "app-tips",
+            "app-tv"
+          ]
+        },
+        {
+          "name": "roles",
+          "in": "formData",
+          "description": "mail",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "enum": [
+            "user",
+            "admin",
+            "support"
+          ]
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "User model",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "550": {
+          "description": "DB Error",
+          "schema": {
+            "$ref": "#/definitions/ResponseStatus"
+          }
+        },
+        "default": {
+          "description": "Internal server error",
+          "schema": {
+            "$ref": "#/definitions/ResponseStatus"
+          }
+        }
+      }
+    }
+  }
+}

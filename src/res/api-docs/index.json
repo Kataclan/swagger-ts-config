@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "nodall api",
+    "license": {
+      "name": "MIT"
+    },
+    "contact": {
+      "name": "juan coll soler",
+      "url": "http://www.nexcode.io",
+      "email": "juan.coll@nexcommunity.com"
+    }
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "/suser/findMany": {
+    "post": {
+      "description": "Get all users",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "suser"
+      ],
+      "responses": {
+        "200": {
+          "description": "All Users",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "users": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            }
+          }
+        },
+        "550": {
+          "description": "DB Error",
+          "schema": {
+            "$ref": "#/definitions/ResponseStatus"
+          }
+        },
+        "default": {
+          "description": "Internal server error",
+          "schema": {
+            "$ref": "#/definitions/ResponseStatus"
+          }
+        }
+      }
+    }
+  }
+}

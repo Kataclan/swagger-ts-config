@@ -1,0 +1,43 @@
+{
+    "User": {
+        "properties": {
+            "username": {
+                "type": "string"
+            },
+            "firstname": {
+                "type": "string"
+            },
+            "lastname": {
+                "type": "string"
+            },
+            "mail": {
+                "type": "string"
+            },
+            "password": {
+                "type": "string",
+                "format": "password"
+            },
+            "appNames": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "appsSettings": {
+                "type": "array",
+                "items": {
+                    "type": "object"
+                }
+            },
+            "roles": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "isFirstTime": {
+                "type": "boolean"
+            }
+        }
+    }
+}
